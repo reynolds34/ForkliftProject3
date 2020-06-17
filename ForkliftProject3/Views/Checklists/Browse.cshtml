@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ForkliftProject3.Models.Checklists>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Completed Checklists</h2>
+<br />
+<p>
+    <a href="~/Checklists/Create" class="link_button">New Checklist</a>
+</p>
+<br />
+<p>
+    <a href="~/Checklists/NewestChecklist" class="btn btn-default">Make Changes to Your Last Checklist</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Completed By
+            </th>
+            <th>
+                Completion Date
+            </th>
+            <th>
+                Forklift Vin Number
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompletedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TodaysDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VinNumber)
+                </td>
+                <td>
+                    
+                    <a asp-action="Details" asp-route-id="@item.ChecklistId" class="link_button">Details</a> |
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

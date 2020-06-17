@@ -1,0 +1,85 @@
+﻿@model ForkliftProject3.Models.Checklists
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>Checklists</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ChecklistId" />
+            <div class="form-group">
+                <label asp-for="CompletedBy" class="control-label"></label>
+                <input asp-for="CompletedBy" class="form-control" />
+                <span asp-validation-for="CompletedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TodaysDate" class="control-label"></label>
+                <input asp-for="TodaysDate" class="form-control" />
+                <span asp-validation-for="TodaysDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VinNumber" class="control-label"></label>
+                <input asp-for="VinNumber" class="form-control" />
+                <span asp-validation-for="VinNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Battery" class="control-label"></label>
+                <input asp-for="Battery" class="form-control" />
+                <span asp-validation-for="Battery" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Oil" class="control-label"></label>
+                <input asp-for="Oil" class="form-control" />
+                <span asp-validation-for="Oil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lights" class="control-label"></label>
+                <input asp-for="Lights" class="form-control" />
+                <span asp-validation-for="Lights" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Horn" class="control-label"></label>
+                <input asp-for="Horn" class="form-control" />
+                <span asp-validation-for="Horn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Levers" class="control-label"></label>
+                <input asp-for="Levers" class="form-control" />
+                <span asp-validation-for="Levers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tires" class="control-label"></label>
+                <input asp-for="Tires" class="form-control" />
+                <span asp-validation-for="Tires" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Forks" class="control-label"></label>
+                <input asp-for="Forks" class="form-control" />
+                <span asp-validation-for="Forks" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comments" class="control-label"></label>
+                <input asp-for="Comments" class="form-control" />
+                <span asp-validation-for="Comments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="link_button" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Browse" class="btn btn-default">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

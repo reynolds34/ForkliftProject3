@@ -1,0 +1,38 @@
+﻿@model ForkliftProject3.Models.Users
+
+@{
+    ViewData["Title"] = "ProfileInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div>
+    <h4>Profile Information</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            First Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            Last Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            User Account ID
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserAccountId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a href="~/Users/Edit/5" class="link_button">Edit</a> |
+    <a href="/" class="btn btn-default">Home</a>
+</div>
+

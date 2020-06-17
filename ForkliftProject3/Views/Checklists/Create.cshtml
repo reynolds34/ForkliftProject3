@@ -1,0 +1,111 @@
+﻿@using Microsoft.AspNetCore.Identity;
+
+@model ForkliftProject3.Models.Checklists
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create Checklist</h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CompletedBy" class="control-label">Completed By</label>
+                <input asp-for="CompletedBy" class="form-control" value="@UserManager.GetUserName(User)" />
+                <span asp-validation-for="CompletedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TodaysDate" class="control-label">Today's Date</label>
+                <input asp-for="TodaysDate" class="form-control" />
+                <span asp-validation-for="TodaysDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VinNumber" class="control-label">Vin Number</label>
+                <input asp-for="VinNumber" class="form-control" />
+                <span asp-validation-for="VinNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Battery">Battery Status</label>
+                <select asp-for="Battery" multiple class="form-control" id="Battery">
+                    <option>Functional</option>
+                    <option>Problem Detected</option>
+                    <option>Not Applicable</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Oil">Oil Status</label>
+                <select asp-for="Oil" multiple class="form-control" id="Oil">
+                    <option>Functional</option>
+                    <option>Problem Detected</option>
+                    <option>Not Applicable</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lights">Lights Status</label>
+                <select asp-for="Lights" multiple class="form-control" id="Lights">
+                    <option>Functional</option>
+                    <option>Problem Detected</option>
+                    <option>Not Applicable</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Horn">Horn Status</label>
+                <select asp-for="Horn" multiple class="form-control" id="Horn">
+                    <option>Functional</option>
+                    <option>Problem Detected</option>
+                    <option>Not Applicable</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Levers">Levers Status</label>
+                <select asp-for="Levers" multiple class="form-control" id="Levers">
+                    <option>Functional</option>
+                    <option>Problem Detected</option>
+                    <option>Not Applicable</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Tires">Tires Status</label>
+                <select asp-for="Tires" multiple class="form-control" id="Tires">
+                    <option>Functional</option>
+                    <option>Problem Detected</option>
+                    <option>Not Applicable</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Forks">Fork Status</label>
+                <select asp-for="Forks" multiple class="form-control" id="Forks">
+                    <option>Functional</option>
+                    <option>Problem Detected</option>
+                    <option>Not Applicable</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comments" class="control-label">Additional Comments</label>
+                <input asp-for="Comments" class="form-control" />
+                <span asp-validation-for="Comments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="link_button" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Browse" class="btn btn-default">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,85 @@
+﻿@model ForkliftProject3.Models.Checklists
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Checklist Details</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Completed By
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompletedBy)
+        </dd>
+        <dt>
+            Completion Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TodaysDate)
+        </dd>
+        <dt>
+            Vin Number
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VinNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Battery)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Battery)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Oil)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Oil)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Lights)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Lights)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Horn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Horn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Levers)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Levers)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tires)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tires)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Forks)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Forks)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+    </dl>
+</div>
+<div>
+    
+    <a asp-action="Browse" class="btn btn-default">Back to List</a>
+</div>
